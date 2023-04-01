@@ -18,7 +18,7 @@ services:
       - ./docker/certs:/etc/ssl/certs
       - ./docker/openssl:/mnt/openssl
     ports:
-      - "8080:80"
+      - "9900:90"
       - "443:443"
       
     env_file: ./docker/fqdn.env
