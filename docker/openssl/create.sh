@@ -2,8 +2,8 @@
 
 cnf_dir='/mnt/openssl/'
 certs_dir='/etc/ssl/certs/'
-openssl req -config ${cnf_dir}flydropCA.cnf -new -x509 -days 1 -keyout ${certs_dir}flydropCA.key -out ${certs_dir}flydropCA.crt
-openssl req -config ${cnf_dir}flydropCert.cnf -new -out /tmp/flydrop-dev.csr -keyout ${certs_dir}flydrop-dev.key
-openssl x509 -req -in /tmp/flydrop-dev.csr -CA ${certs_dir}flydropCA.crt -CAkey ${certs_dir}flydropCA.key -CAcreateserial -extensions req_ext -extfile ${cnf_dir}flydropCert.cnf -sha512 -days 1 -out ${certs_dir}flydrop-dev.crt
+openssl req -config ${cnf_dir}snapdropCA.cnf -new -x509 -days 1 -keyout ${certs_dir}snapdropCA.key -out ${certs_dir}snapdropCA.crt
+openssl req -config ${cnf_dir}snapdropCert.cnf -new -out /tmp/snapdrop-dev.csr -keyout ${certs_dir}snapdrop-dev.key
+openssl x509 -req -in /tmp/snapdrop-dev.csr -CA ${certs_dir}snapdropCA.crt -CAkey ${certs_dir}snapdropCA.key -CAcreateserial -extensions req_ext -extfile ${cnf_dir}snapdropCert.cnf -sha512 -days 1 -out ${certs_dir}snapdrop-dev.crt
 
 exec "$@"
